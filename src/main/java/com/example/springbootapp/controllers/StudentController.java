@@ -3,6 +3,7 @@ package com.example.springbootapp.controllers;
 import com.example.springbootapp.entity.Student;
 import com.example.springbootapp.service.ServiceJPA;
 import com.example.springbootapp.service.StudentService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,7 @@ public class StudentController {
 
     //    @GetMapping(value = "/student", produces = MediaType.APPLICATION_XML_VALUE)
     @GetMapping("/student")
+    @Operation(summary = "showAllStudents")
     public List<Student> show() {
         return service.getAllStudent();
     }
