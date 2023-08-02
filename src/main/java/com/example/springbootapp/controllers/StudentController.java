@@ -27,6 +27,7 @@ public class StudentController {
     }
 
     @GetMapping("/student/{id}")
+    @Operation(summary = "getByID")
     public Student getStudent(@PathVariable int id) {
         return service.getStudents(id);
     }
